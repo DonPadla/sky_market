@@ -52,3 +52,15 @@ def test_products(one_category):
         "c, d, 2.0 руб. Остаток: 2 шт.\n"
         "e, f, 3.0 руб. Остаток: 3 шт.\n"
     )
+
+
+def test_str_product(product_first_phone):
+    assert str(product_first_phone) == "phonei, 78900.0 руб. Остаток: 1 шт."
+
+
+def test_add_product(product_first_phone, for_test_new_product):
+    assert product_first_phone + for_test_new_product == 380400.0
+
+
+def test_str_category(one_category):
+    assert str(one_category) == "abc, колличество продуктов: 6"
