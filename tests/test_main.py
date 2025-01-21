@@ -1,4 +1,7 @@
+import pytest
+
 from main import Category, Product
+from src.product import Smartphone, LawnGrass
 
 
 def test_init(product_first_phone):
@@ -62,5 +65,29 @@ def test_add_product(product_first_phone, for_test_new_product):
     assert product_first_phone + for_test_new_product == 380400.0
 
 
+def test_invalid_add_product():
+    with pytest.raises(TypeError):
+        Category.add_product("Что-то не то")
+
+
 def test_str_category(one_category):
     assert str(one_category) == "abc, колличество продуктов: 6"
+
+
+def test_init_smartphone():
+    smartphone = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет,"
+                                                        "200MP камера",
+                            180000.0, 5, 95.5,
+                            "S23 Ultra", 256, "Серый")
+    assert smartphone.efficiency == 95.5
+    assert smartphone.model == "S23 Ultra"
+    assert smartphone.memory == 256
+    assert smartphone.color == "Серый"
+
+
+def test_init_lawn_grass():
+    grass = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20,
+                      "Россия", "7 дней", "Зеленый")
+    assert grass.country == "Россия"
+    assert grass.germination_period == "7 дней"
+    assert grass.color == "Зеленый"
