@@ -75,19 +75,20 @@ def test_str_category(one_category):
 
 
 def test_init_smartphone():
-    smartphone = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет,"
-                                                        "200MP камера",
-                            180000.0, 5, 95.5,
-                            "S23 Ultra", 256, "Серый")
-    assert smartphone.efficiency == 95.5
-    assert smartphone.model == "S23 Ultra"
-    assert smartphone.memory == 256
-    assert smartphone.color == "Серый"
+    phone_for_test = Smartphone("Samsung Galaxy S23 Ultra",
+                                "256GB, Серый цвет," "200MP камера",
+                                180000.0, 5, 95.5,
+                                "S23 Ultra", 256, "Серый")
+    assert phone_for_test.efficiency == 95.5
+    assert phone_for_test.model == "S23 Ultra"
+    assert phone_for_test.memory == 256
+    assert phone_for_test.color == "Серый"
 
 
 def test_init_lawn_grass():
-    grass = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20,
-                      "Россия", "7 дней", "Зеленый")
-    assert grass.country == "Россия"
-    assert grass.germination_period == "7 дней"
-    assert grass.color == "Зеленый"
+    grass_for_test = LawnGrass("Газонная трава",
+                               "Элитная трава для газона", 500.0, 20,
+                               "Россия", "7 дней", "Зеленый")
+    assert grass_for_test.country == "Россия"
+    assert grass_for_test.germination_period == "7 дней"
+    assert grass_for_test.color == "Зеленый"

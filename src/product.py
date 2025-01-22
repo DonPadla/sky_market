@@ -48,7 +48,7 @@ class Product:
     def __add__(self, other):
         """ Возвращает сумму продуктов """
 
-        if isinstance(other, type(self)):
+        if type(other) is self.__class__:
             return (self.__price * self.quantity +
                     other.__price * other.quantity)
 
