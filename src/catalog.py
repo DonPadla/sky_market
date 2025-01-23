@@ -33,13 +33,12 @@ class Category:
 
     @property
     def products(self):
-
         """ Возвращает строку с описанием всех продуктов в категории """
+
         product_str = ""
         for element in self.__products:
-            product_str += \
-                f"""{element.name}, {element.description},
-{element.price} руб. Остаток: {element.quantity} шт.\n"""
+            product_str += f"""{element.name}, {element.
+            description}, {element.price} руб. Остаток: {element.quantity} шт.\n"""
         return product_str
 
     def __str__(self):

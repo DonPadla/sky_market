@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import MixinLog
+
+
+class Product(MixinLog, BaseProduct):
     """ Класс для работы с информацией о продукте """
 
     name: str
@@ -13,6 +17,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     @classmethod
     def new_product(cls, new_element):
