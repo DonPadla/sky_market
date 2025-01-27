@@ -37,7 +37,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
+
 .tox/
 .nox/
 .coverage
@@ -168,4 +168,4 @@ cython_debug/
 .idea/
 
 # PyPI configuration file
-.pypirc
+.pypirc.idea
