@@ -37,8 +37,10 @@ class Category:
 
         product_str = ""
         for element in self.__products:
-            product_str += f"""{element.name}, {element.
-            description}, {element.price} руб. Остаток: {element.quantity} шт.\n"""
+            product_str += f"""{
+                                element.name}, {element.description}, {
+                                element.price} руб. Остаток: {
+                                element.quantity} шт.\n"""
         return product_str
 
     def __str__(self):
@@ -49,3 +51,16 @@ class Category:
             amount += element.quantity
 
         return f"{self.name}, колличество продуктов: {amount}"
+
+    def middle_price(self):
+        """ Метод, высчитывающий средний ценник всех товаров """
+
+        try:
+            total_cost = 0
+            for product in self.__products:
+                total_cost += product.price * product.quantity
+            return round(total_cost / sum([product.quantity for
+                                           product in self.__products]), 2)
+
+        except ZeroDivisionError:
+            return 0

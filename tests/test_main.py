@@ -92,3 +92,12 @@ def test_init_lawn_grass():
     assert grass_for_test.country == "Россия"
     assert grass_for_test.germination_period == "7 дней"
     assert grass_for_test.color == "Зеленый"
+
+
+def test_middle_price(one_category):
+    assert one_category.middle_price() == 2.33
+
+
+def test_error_middle_price():
+    with pytest.raises(ZeroDivisionError):
+        raise ZeroDivisionError
